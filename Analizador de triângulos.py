@@ -24,7 +24,7 @@ if quant_triang == 0:
 sleep(0.5)
 
 if quant_triang >= 1:
-    # Pré determinar as variáveis
+    # Declaração das variáveis
     triangs = []
     temp = []
 
@@ -105,6 +105,7 @@ if quant_triang >= 1:
             print(f'\nÁrea: {area:.2f} | Perímetro: {peri:.2f}')
             print(f'ângulo AB: {angAB:.2f}° | ângulo BC: {angBC:.2f}° | ângulo AC: {angAC:.2f}°')
             print(f'Altura A: {altA:.2f} | Altura B: {altB:.2f} | Altura C: {altC:.2f}')
+
         else:
             print('Com esses dados, não é possível fazer um triângulo!')
         print()
