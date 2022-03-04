@@ -1,4 +1,4 @@
-from math import sqrt, pi, cos, degrees
+from math import sqrt, degrees
 from numpy import arccos
 from PIL import Image
 from time import sleep
@@ -33,15 +33,14 @@ if quant_triang >= 1:
     temp = []
 
     # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
-    esc = input('\nDeseja visualizar uma imagem de exemplo para facilitar a inserção e leitura dos dados? [Sim / Não]: ').strip().upper()[0]
+    esc = input('\nDeseja visualizar uma imagem de exemplo para facilitar a inserção e leitura dos dados? S [Sim] ou N [Não]: ').strip().upper()[0]
 
     if esc not in 'SN': print()
     while esc not in 'SN':
         esc = input('Valor inválido! Digite S [Sim] ou N [Não]: ').strip().upper()[0]
 
     if esc == 'S':
-        img = Image.open('triangulo.png')
-        img.show()
+        Image.open('imagens/triangulo.png').show()
 
     # Laço para inserir os dados sobre os triângulos
     for c in range(0, quant_triang):
