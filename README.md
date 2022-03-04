@@ -1,2 +1,2 @@
 # Analisador de triângulos
- Ele analisa diversos triângulos inseridos pelo usuário, e retorna dados, como: área; altura; ângulos.
+ Com base no comprimento dos triângulos informados, retorna dados, como: tipo de triângulo; área; perímetro; ângulos e (se possível) a equivalência dos triângulos informados.
