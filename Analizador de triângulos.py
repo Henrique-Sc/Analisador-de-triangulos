@@ -4,14 +4,18 @@ from PIL import Image
 from time import sleep
 
 reset = '\033[m'
-gray = '\033[37m'
+italico = '\033[3m'
 
 # Resumo sobre o programa
 print('===== Analizador de triângulos =====')
 
 print(f'''
-{gray}Com base no comprimento desse triângulo, retorna dados, como: tipo de triângulo, área, perímetro, ângulos
- e (se possível) a equivalência dos triângulos informados.{reset}''')
+{italico}Com base no comprimento dos triângulos informados, retorna dados, como: 
+    > tipo de triângulo
+    > área
+    > perímetro
+    > ângulos
+    > Equivalência entre os triângulos informados.{reset}''')
 
 # Perguntar ao usuário quantos triângulos ele quer analizar
 quant_triang = int(input('\nQuantos triângulos deseja analizar? ').strip())
