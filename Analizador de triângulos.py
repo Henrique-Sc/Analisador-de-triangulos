@@ -33,9 +33,11 @@ if quant_triang >= 1:
     temp = []
 
     # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
-    esc = input('\nDeseja visualizar uma imagem de exemplo para facilitar a inserção e leitura dos dados? S [Sim] ou N [Não]: ').strip().upper()[0]
+    esc = input('\nDeseja visualizar uma imagem de exemplo para facilitar a inserção e leitura dos dados? S [Sim] ou '
+                'N [Não]: ').strip().upper()[0]
 
-    if esc not in 'SN': print()
+    if esc not in 'SN':
+        print()
     while esc not in 'SN':
         esc = input('Valor inválido! Digite S [Sim] ou N [Não]: ').strip().upper()[0]
 
@@ -68,7 +70,6 @@ if quant_triang >= 1:
     sleep(0.5)
     print('\n\n=-=-=-=-= Análise dos dados =-=-=-=-=\n')
 
-
     # Resultado
     for i, triang in enumerate(triangs):
         sleep(1.5)
@@ -86,7 +87,7 @@ if quant_triang >= 1:
         if a + b > c and a + c > b and b + c > a:
             # Cálculos
             s = (a + b + c) / 2  # S - Para realizar a equação de Heron
-            area = sqrt(s*(s - a) * (s - b) * (s - c))  # Área
+            area = sqrt(s * (s - a) * (s - b) * (s - c))  # Área
             peri = a + b + c  # Perímetro
 
             angAB = degrees(arccos((a ** 2 + b ** 2 - c ** 2) / (2 * b * a)))  # Ângulo AB
@@ -115,4 +116,5 @@ if quant_triang >= 1:
         print('=' * 37)
         print()
 sleep(1.5)
+
 print('\nFim da execução. Volte sempre \(•◡•)/')
