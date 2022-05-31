@@ -3,5 +3,3 @@ def title(txt):
     print('=' * tam)
     print(f'  {txt}')
     print('=' * tam)
-
-
