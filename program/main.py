@@ -23,7 +23,7 @@ sleep(1)
 # Quantidades de triângulos que vai analisar
 quant_triang = dados.leiaInt('-> Quantos triângulos deseja analisar? ')
 
-print(quant_triang)
+
 
 # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
 
