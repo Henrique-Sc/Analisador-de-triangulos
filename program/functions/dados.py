@@ -1,5 +1,6 @@
 from PIL import Image
 
+
 def leiaInt(t=''):
     while True:
         txt = input(t)
@@ -30,5 +31,7 @@ def escolha(txt):
     while esc not in 'SN':
         esc = input('Valor inválido! Digite S [Sim] ou N [Não]: ').strip().upper()[0]
 
-    if esc == 'S':
-        Image.open('../imagens/triangulo.png').show()
+    if esc == "S":
+        return True
+    else:
+        return False
