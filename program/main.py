@@ -21,12 +21,7 @@ Com base no comprimento dos triângulos informados, retorna dados, como:
 sleep(1)
 
 # Quantidades de triângulos que vai analisar
-quant_triang = dados.leiaInt('-> Quantos triângulos deseja analisar? ')
-
-if quant_triang <= 0:
-    print(f'\nDeseja realmente analisar \"{quant_triang}\" triângulos? isso fará com que o programa não execute a '
-          f'análise.')
-    quant_triang = int(input('Quantos triângulos deseja analizar? ').strip())
+quant_triang = dados.receberTriang('-> Quantos triângulos deseja analisar? ')
 
 # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
 
