@@ -12,20 +12,24 @@ sleep(1)
 
 print(f'''{italico}
 Com base no comprimento dos triângulos informados, retorna dados, como: 
-    > tipo de triângulo
+    > tipo do triângulo
     > área
     > perímetro
     > ângulos
-    > Equivalência entre os triângulos informados {reset}\n''')
+    > equivalência entre os triângulos {reset}\n''')
 
 sleep(1)
 
 # Quantidades de triângulos que vai analisar
 quant_triang = dados.leiaInt('-> Quantos triângulos deseja analisar? ')
 
-
+if quant_triang <= 0:
+    print(f'\nDeseja realmente analisar \"{quant_triang}\" triângulos? isso fará com que o programa não execute a '
+          f'análise.')
+    quant_triang = int(input('Quantos triângulos deseja analizar? ').strip())
 
 # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
+
 
 # Inserir dados do triângulo
 
