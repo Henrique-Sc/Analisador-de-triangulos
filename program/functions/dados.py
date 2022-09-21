@@ -1,4 +1,3 @@
-from PIL import Image
 from format import formatacao
 from time import sleep
 
@@ -35,24 +34,17 @@ def receberTriang(msg):
 
 
 def escolha():
-    try:
-        while True:
+    while True:
+        try:
             esc = input(f'Digita [{formatacao[6]}S{formatacao[0]}] para Sim '
-                        f'ou [{formatacao[3]}N{formatacao[0]}] para Não: ').strip().upper()[0] 
+                        f'ou [{formatacao[3]}N{formatacao[0]}] para Não: ').strip().upper()[0]
+            if esc not in 'SN':
+                erro('Valor inválido.')
+            else:
+                if esc == 'S':
+                    return True
+                else:
+                    return False
 
-    except KeyboardInterrupt:
-        userInterrupt()
-    #
-    # if esc not in 'SN':
-    #     print()
-    # while esc not in 'SN':
-    #     erro('Valor inválido! Digite S [Sim] ou N [Não]: ')
-    #     esc = input().strip().upper()[0]
-    #
-    # if esc == "S":
-    #     return True
-    # else:
-    #     return False
-
-
-escolha()
+        except IndexError:
+            erro('Valor inválido.')
