@@ -1,4 +1,4 @@
-cores = [
+format = [
     '\033[m',    # 0 - Reset
     '\033[3m',   # 1 - Itálico
     '\033[31m',  # 2 - Vermelho
