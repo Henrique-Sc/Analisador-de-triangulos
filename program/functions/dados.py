@@ -1,12 +1,12 @@
 from PIL import Image
 
 
-def leiaInt(t=''):
+def leiaInt(msg=''):
     while True:
-        txt = input(t)
+        msg_input = input(msg.strip())
 
-        if txt.strip().isnumeric():
-            num = int(txt)
+        if msg_input.strip().isnumeric():
+            num = int(msg_input)
             break
         else:
             print('\033[31mValor inválido! Digite um número inteiro.\033[m')
@@ -14,13 +14,14 @@ def leiaInt(t=''):
     return num
 
 
-def receberTriang(txt):
-    quantTriang = leiaInt(txt)
+def receberTriang(msg):
+    quantTriang = leiaInt(msg)
 
     if quantTriang <= 0:
         print(f'\nDeseja realmente analisar \"{quantTriang}\" triângulos? isso fará com que o programa não execute a '
               f'análise.')
         quantTriang = int(input('Quantos triângulos deseja analizar? ').strip())
+        return quantTriang
 
 
 def escolha(txt):
