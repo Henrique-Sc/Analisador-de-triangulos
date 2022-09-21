@@ -2,20 +2,19 @@ from math import sqrt, degrees
 from numpy import arccos
 from PIL import Image
 from time import sleep
+from functions import dados, format
 
-reset = '\033[m'
-italico = '\033[3m'
 
 # Resumo sobre o programa
-print('===== Analizador de triângulos =====')
+format.title('===== Analizador de triângulos =====')
 
 print(f'''
-{italico}Com base no comprimento dos triângulos informados, retorna dados, como: 
+{format.format[1]}Com base no comprimento dos triângulos informados, retorna dados, como: 
     > tipo de triângulo
     > área
     > perímetro
     > ângulos
-    > Equivalência entre os triângulos informados.{reset}''')
+    > Equivalência entre os triângulos informados.{format.format[0]}''')
 
 # Perguntar ao usuário quantos triângulos ele quer analizar
 quant_triang = int(input('\nQuantos triângulos deseja analizar? ').strip())
