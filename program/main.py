@@ -9,18 +9,18 @@ from functions import dados, format
 format.title('===== Analizador de triângulos =====')
 
 print(f'''
-{format.format[1]}Com base no comprimento dos triângulos informados, retorna dados, como: 
+{format.formatacao[1]}Com base no comprimento dos triângulos informados, retorna dados, como: 
     > tipo de triângulo
     > área
     > perímetro
     > ângulos
-    > Equivalência entre os triângulos informados.{format.format[0]}''')
+    > Equivalência entre os triângulos informados.{format.formatacao[0]}''')
 
 
 # Perguntar ao usuário quantos triângulos ele quer analizar
+# Se o usúario digitar 0, mostrará uma mensagem se ele quer mesmo continuar. Caso ele digite 0
 quant_triang = dados.receberTriang(msg='\nQuantos triângulos deseja analizar? ')
 
-# Se o usúario digitar 0, mostrará uma mensagem se ele quer mesmo continuar (Assim, o programa iria fechar)
 if quant_triang == 0:
     print('quebra')
 
