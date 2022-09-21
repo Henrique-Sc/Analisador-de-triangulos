@@ -16,13 +16,13 @@ print(f'''
     > ângulos
     > Equivalência entre os triângulos informados.{format.format[0]}''')
 
+
 # Perguntar ao usuário quantos triângulos ele quer analizar
-quant_triang = int(input('\nQuantos triângulos deseja analizar? ').strip())
+quant_triang = dados.receberTriang(msg='\nQuantos triângulos deseja analizar? ')
 
 # Se o usúario digitar 0, mostrará uma mensagem se ele quer mesmo continuar (Assim, o programa iria fechar)
 if quant_triang == 0:
-    print('\nDeseja realmente analisar 0 triângulos? isso fará com que o programa não execute a análise.')
-    quant_triang = int(input('Quantos triângulos deseja analizar? ').strip())
+    print('quebra')
 
 sleep(0.5)
 
