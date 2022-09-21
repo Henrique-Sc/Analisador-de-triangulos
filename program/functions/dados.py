@@ -3,24 +3,32 @@ from format import formatacao
 from time import sleep
 
 
+def erro(msg=''):
+    print(f'{formatacao[2]}ERRO! {msg}{formatacao[0]}')
+
+
 def leiaInt(msg=''):
     while True:
         try:
             num = int(input(msg).strip())
         except (ValueError, TypeError):
-            print(f'{formatacao[2]}ERRO! Digite um valor válido.{formatacao[0]}')
+            erro('Digite um valor válido.')
             sleep(0.5)
         else:
             return num
 
 
-# def receberTriang(msg):
-#
-#     while True:
-#         quantTriang = leiaInt(msg)
-#         if quantTriang <= 0:
-#             print(f'{formatacao[2]}Digite um valor maior ou igual a 1.')
-#
+def receberTriang(msg):
+    try:
+        while True:
+            quantTriang = leiaInt(msg)
+            if quantTriang <= 0:
+                erro('Digite um valor maior ou igual a 1.')
+            else:
+                return quantTriang
+    except KeyboardInterrupt:
+        erro('O usuário encerrou o programa.')
+
 
     # if quantTriang <= 0:
     #     print(f'\nDeseja realmente analisar \"{quantTriang}\" triângulos? isso fará com que o programa não execute a '
@@ -42,5 +50,3 @@ def escolha(txt):
     else:
         return False
 
-
-print(f"O número digitado foi: {leiaInt('Digite um número inteiro: ')}")
