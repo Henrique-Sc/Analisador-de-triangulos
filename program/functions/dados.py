@@ -1,27 +1,32 @@
 from PIL import Image
+from format import formatacao
+from time import sleep
 
 
 def leiaInt(msg=''):
     while True:
-        msg_input = input(msg.strip())
-
-        if msg_input.strip().isnumeric():
-            num = int(msg_input)
-            break
+        try:
+            num = int(input(msg).strip())
+        except (ValueError, TypeError):
+            print(f'{formatacao[2]}ERRO! Digite um valor válido.{formatacao[0]}')
+            sleep(0.5)
         else:
-            print('\033[31mValor inválido! Digite um número inteiro.\033[m')
-
-    return num
+            return num
 
 
-def receberTriang(msg):
-    quantTriang = leiaInt(msg)
+# def receberTriang(msg):
+#
+#     while True:
+#         quantTriang = leiaInt(msg)
+#         if quantTriang <= 0:
+#             print(f'{formatacao[2]}Digite um valor maior ou igual a 1.')
+#
 
-    if quantTriang <= 0:
-        print(f'\nDeseja realmente analisar \"{quantTriang}\" triângulos? isso fará com que o programa não execute a '
-              f'análise.')
-        quantTriang = int(input('Quantos triângulos deseja analizar? ').strip())
-        return quantTriang
+    # if quantTriang <= 0:
+    #     print(f'\nDeseja realmente analisar \"{quantTriang}\" triângulos? isso fará com que o programa não execute a '
+    #           f'análise.')
+    #     quantTriang = int(input('Quantos triângulos deseja analizar? ').strip())
+    #     return quantTriang
 
 
 def escolha(txt):
@@ -36,3 +41,6 @@ def escolha(txt):
         return True
     else:
         return False
+
+
+print(f"O número digitado foi: {leiaInt('Digite um número inteiro: ')}")
