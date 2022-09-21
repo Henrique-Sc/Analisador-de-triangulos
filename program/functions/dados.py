@@ -4,7 +4,11 @@ from time import sleep
 
 
 def erro(msg=''):
-    print(f'{formatacao[2]}ERRO! {msg}{formatacao[0]}')
+    print(f'{formatacao[3]}ERRO! {msg}{formatacao[0]}')
+
+
+def userInterrupt():
+    erro('O usuário encerrou o programa.')
 
 
 def leiaInt(msg=''):
@@ -27,26 +31,28 @@ def receberTriang(msg):
             else:
                 return quantTriang
     except KeyboardInterrupt:
-        erro('O usuário encerrou o programa.')
+        userInterrupt()
 
 
-    # if quantTriang <= 0:
-    #     print(f'\nDeseja realmente analisar \"{quantTriang}\" triângulos? isso fará com que o programa não execute a '
-    #           f'análise.')
-    #     quantTriang = int(input('Quantos triângulos deseja analizar? ').strip())
-    #     return quantTriang
+def escolha():
+    try:
+        while True:
+            esc = input(f'Digita [{formatacao[6]}S{formatacao[0]}] para Sim '
+                        f'ou [{formatacao[3]}N{formatacao[0]}] para Não: ').strip().upper()[0] 
+
+    except KeyboardInterrupt:
+        userInterrupt()
+    #
+    # if esc not in 'SN':
+    #     print()
+    # while esc not in 'SN':
+    #     erro('Valor inválido! Digite S [Sim] ou N [Não]: ')
+    #     esc = input().strip().upper()[0]
+    #
+    # if esc == "S":
+    #     return True
+    # else:
+    #     return False
 
 
-def escolha(txt):
-    esc = input(txt).strip().upper()[0]
-
-    if esc not in 'SN':
-        print()
-    while esc not in 'SN':
-        esc = input('Valor inválido! Digite S [Sim] ou N [Não]: ').strip().upper()[0]
-
-    if esc == "S":
-        return True
-    else:
-        return False
-
+escolha()
