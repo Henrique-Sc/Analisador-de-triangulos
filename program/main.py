@@ -2,8 +2,7 @@ from math import sqrt, degrees
 from numpy import arccos
 from PIL import Image
 from time import sleep
-from functions import dados, format
-
+from functions import format, dados
 
 # Resumo sobre o programa
 format.title('===== Analizador de triângulos =====')
