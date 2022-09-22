@@ -29,8 +29,11 @@ def receberTriang(msg):
                 erro('Digite um valor maior ou igual a 1.')
             else:
                 return quantTriang
+
     except KeyboardInterrupt:
         userInterrupt()
+        quantTriang = 0
+        return quantTriang
 
 
 def escolha():
