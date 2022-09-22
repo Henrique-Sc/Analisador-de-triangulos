@@ -1,6 +1,5 @@
-from ..format import *
 from time import sleep
-
+from ..format import *
 
 def erro(msg=''):
     print(f'{formatacao[3]}ERRO! {msg}{formatacao[0]}')
@@ -21,7 +20,7 @@ def leiaInt(msg=''):
             return num
 
 
-def receberTriang(msg):
+def quantTriang(msg):
     try:
         while True:
             quantTriang = leiaInt(msg)
@@ -51,3 +50,13 @@ def escolha():
 
         except IndexError:
             erro('Valor inválido.')
+
+
+def dadosTriang(quant_triang, cor=0):
+    for c in range(quant_triang):
+        title(f'{c + 1}º triângulo', cor=cor, tam=26)
+
+        sleep(1)
+
+
+
