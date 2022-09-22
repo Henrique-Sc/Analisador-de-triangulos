@@ -13,6 +13,7 @@ formatacao = [
 
 
 def title(txt, cor=0):
+    txt = txt.strip()
     tam = len(txt) + 4
 
     print(formatacao[cor], end='')
