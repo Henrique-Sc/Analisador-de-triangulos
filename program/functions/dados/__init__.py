@@ -1,6 +1,7 @@
 from time import sleep
 from ..format import *
 
+
 def erro(msg=''):
     print(f'{formatacao[3]}ERRO! {msg}{formatacao[0]}')
 
@@ -15,6 +16,17 @@ def leiaInt(msg=''):
             num = int(input(msg).strip())
         except (ValueError, TypeError):
             erro('Digite um valor válido.')
+            sleep(0.5)
+        else:
+            return num
+
+
+def leiaFloat(msg=''):
+    while True:
+        try:
+            num = float(input(msg).strip())
+        except (ValueError, TypeError):
+            erro('Digite um valor válido')
             sleep(0.5)
         else:
             return num
@@ -53,10 +65,22 @@ def escolha():
 
 
 def dadosTriang(quant_triang, cor=0):
+    triangs = list()
+    temp = list()
     for c in range(quant_triang):
         title(f'{c + 1}º triângulo', cor=cor, tam=26)
-
         sleep(1)
 
+        print(f'\nDigite as informações:')
+        sleep(1)
 
+        temp.append(leiaFloat('Lado A: '))
+        temp.append(leiaFloat('Lado B: '))
+        temp.append(leiaFloat('Lado C: '))
+
+        triangs.append(temp[:])
+        temp.clear()
+
+        print()
+        sleep(1)
 
