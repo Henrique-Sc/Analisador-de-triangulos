@@ -8,20 +8,21 @@ formatacao = [
     '\033[38;5;12m',  # 6 - Azul
     '\033[38;5;13m',  # 7 - Magenta
     '\033[38;5;14m',  # 8 - Ciano
-    '\033[38;5;15m'   # 9 - Branco
 ]
 
 
-def title(txt, cor=0):
+def title(txt, cor=0, tam=0):
     txt = txt.strip()
-    tam = len(txt) + 4
+
+    if tam == 0:
+        tam = len(txt) + 4
 
     print(formatacao[cor], end='')
     print('=' * tam)
-    print(f'  {txt}')
+    print(f'{txt}'.center(tam))
     print('=' * tam, end='')
     print(formatacao[0])
 
 
-def linha(tmn=28, simb='='):
-    print(simb * tmn)
+def linha(tmn=35, simb='=', cor=0):
+    print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
