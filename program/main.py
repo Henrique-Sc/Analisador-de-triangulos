@@ -1,8 +1,12 @@
-from math import sqrt, degrees
-from numpy import arccos
-from PIL import Image
-from time import sleep
-from functions import dados, format
+try:
+    from math import sqrt, degrees
+    from numpy import arccos
+    from PIL import Image
+    from time import sleep
+    from functions import format
+    from functions import dados
+except:
+    pass
 
 
 # Resumo sobre o programa
