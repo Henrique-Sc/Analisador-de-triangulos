@@ -21,3 +21,7 @@ def title(txt, cor=0):
     print(f'  {txt}')
     print('=' * tam, end='')
     print(formatacao[0])
+
+
+def linha(tmn=28, simb='='):
+    print(simb * tmn)
