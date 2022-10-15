@@ -83,4 +83,4 @@ def dadosTriang(quantTriang, cor=0):
         temp.clear()
 
         sleep(1.5)
-
+    return triangs
