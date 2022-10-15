@@ -68,6 +68,7 @@ def dadosTriang(quantTriang, cor=0):
     triangs = list()
     temp = list()
     for c in range(quantTriang):
+        print()
         title(f'{c + 1}º triângulo', cor=cor, tam=26)
         sleep(1)
 
@@ -81,6 +82,5 @@ def dadosTriang(quantTriang, cor=0):
         triangs.append(temp[:])
         temp.clear()
 
-        print()
-        sleep(1)
+        sleep(1.5)
 
