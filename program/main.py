@@ -45,27 +45,6 @@ while True:
         # Linha amarela
         format.flinha(cor=5)
 
-        # for c in range(0, quant_triang):
-        #     sleep(0.5)
-        #
-        #     # Título
-        #     print()
-        #     print('=' * 37)
-        #     print(f'\n{f" {c + 1}º Triângulo ":-^37}')
-        #
-        #     # Entrada dos dados
-        #     print('\nDigite as informações: ')
-        #     print()
-        #     temp.append(float(input('Lado A: ').strip()))
-        #     temp.append(float(input('Lado B: ').strip()))
-        #     temp.append(float(input('Lado C: ').strip()))
-        #
-        #     # Inserindo os dados e limpando a lista temp
-        #     triangs.append(temp[:])
-        #     temp.clear()
-        #
-        #     print()
-        #     print('=' * 37)
         #
         # sleep(0.5)
         # print('\n\n=-=-=-=-= Análise dos dados =-=-=-=-=\n')
