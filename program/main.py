@@ -26,27 +26,24 @@ while True:
                 dados.erro('Digite um valor maior ou igual a 1.')
             else:
                 break
-        print()
 
         # Linha amarela
-        sleep(1)
-        format.linha(cor=5)
-        sleep(1)
+        format.flinha(cor=5)
 
         # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
         print(f'\nDeseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
         sleep(3)
         if dados.escolha():
             Image.open('images/triangle.png').show()
-            print()
 
-            # Linha amarela
-            sleep(1)
-            format.linha(cor=5)
-            sleep(1)
+        # Linha amarela
+        format.flinha(cor=5)
 
         # Inserir os dados do(s) triângulo(s)
         dados.dadosTriang(quantTriang)
+
+        # Linha amarela
+        format.flinha(cor=5)
 
         # for c in range(0, quant_triang):
         #     sleep(0.5)
