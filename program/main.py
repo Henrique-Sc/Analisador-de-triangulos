@@ -40,7 +40,7 @@ while True:
         format.flinha(cor=5)
 
         # Inserir os dados do(s) triângulo(s)
-        dados.dadosTriang(quantTriang)
+        triangs = dados.dadosTriang(quantTriang)
 
         # Linha amarela
         format.flinha(cor=5)
