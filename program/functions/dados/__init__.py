@@ -43,8 +43,8 @@ def quantTriang(msg):
 
     except KeyboardInterrupt:
         userInterrupt()
-        quantTriang = 0
-        return quantTriang
+        sleep(1)
+        return False
 
 
 def escolha():
@@ -64,10 +64,10 @@ def escolha():
             erro('Valor inválido.')
 
 
-def dadosTriang(quant_triang, cor=0):
+def dadosTriang(quantTriang, cor=0):
     triangs = list()
     temp = list()
-    for c in range(quant_triang):
+    for c in range(quantTriang):
         title(f'{c + 1}º triângulo', cor=cor, tam=26)
         sleep(1)
 
