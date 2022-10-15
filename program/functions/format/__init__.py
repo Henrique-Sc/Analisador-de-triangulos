@@ -1,3 +1,5 @@
+from time import sleep
+
 formatacao = [
     '\033[m',         # 0 - Reset
     '\033[1m',        # 1 - Negrito
@@ -26,3 +28,10 @@ def title(txt, cor=0, tam=0):
 
 def linha(tmn=35, simb='=', cor=0):
     print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
+
+
+def flinha(tmn=35, simb='=', cor=0):
+    print()
+    sleep(1)
+    print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
+    sleep(1)
