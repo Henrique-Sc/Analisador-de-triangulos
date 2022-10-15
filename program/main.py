@@ -20,9 +20,15 @@ while True:
         sleep(1)
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
-        quant_triang = dados.quantTriang(msg='\nQuantos triângulos deseja analizar? ')
+        while True:
+            quantTriang = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
+            if quantTriang <= 0:
+                dados.erro('Digite um valor maior ou igual a 1.')
+            else:
+                break
         print()
 
+        # Linha amarela
         sleep(1)
         format.linha(cor=5)
         sleep(1)
@@ -32,9 +38,15 @@ while True:
         sleep(3)
         if dados.escolha():
             Image.open('images/triangle.png').show()
+            print()
+
+            # Linha amarela
+            sleep(1)
+            format.linha(cor=5)
+            sleep(1)
 
         # Inserir os dados do(s) triângulo(s)
-        dados.dadosTriang(quant_triang)
+        dados.dadosTriang(quantTriang)
 
         # for c in range(0, quant_triang):
         #     sleep(0.5)
@@ -115,9 +127,8 @@ while True:
     except KeyboardInterrupt:
         print('')
         dados.userInterrupt()
-        sleep(2)
+        sleep(1)
         print('')
         format.title('O programa será reiniciado...', 5)
-        sleep(3)
+        sleep(2)
         print('')
-
