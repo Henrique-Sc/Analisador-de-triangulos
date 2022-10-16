@@ -47,8 +47,8 @@ while True:
         format.flinha(cor=5)
 
         # Análise dos dados
-        # analisarTriang.analise(dados=triangs)
-
+        format.title('Análise dos dados', 6)
+        analisarTriang.analise(dados=triangs)
 
         # # Resultado
         # for i, triang in enumerate(triangs):
