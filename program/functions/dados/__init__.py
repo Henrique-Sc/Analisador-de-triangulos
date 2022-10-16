@@ -61,11 +61,11 @@ def escolha():
             erro('Valor inválido.')
 
 
-def dadosTriang(quant_Triang, cor=0):
+def dadosTriang(quant_Triang):
     triangs = list()
     for c in range(quant_Triang):
         print()
-        title(f'{c + 1}º triângulo', cor=cor, tam=26)
+        title(f'{c + 1}º triângulo', cor=3)
         sleep(1)
 
         print(f'\nDigite as informações:')
