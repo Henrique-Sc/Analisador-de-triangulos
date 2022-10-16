@@ -1,8 +1,8 @@
-from math import sqrt, degrees
-from numpy import arccos
+# from math import sqrt, degrees
+# from numpy import arccos
 from PIL import Image
 from time import sleep
-from functions import format, dados
+from functions import format, dados, analisarTriang
 
 while True:
     try:
@@ -45,10 +45,10 @@ while True:
         # Linha amarela
         format.flinha(cor=5)
 
-        #
-        # sleep(0.5)
-        # print('\n\n=-=-=-=-= Análise dos dados =-=-=-=-=\n')
-        #
+        # Análise dos dados
+        analisarTriang.analise(dados=triangs)
+
+
         # # Resultado
         # for i, triang in enumerate(triangs):
         #     sleep(1.5)
