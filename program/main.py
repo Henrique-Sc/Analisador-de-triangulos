@@ -41,12 +41,13 @@ while True:
 
         # Inserir os dados do(s) triângulo(s)
         triangs = dados.dadosTriang(quantTriang)
+        print(triangs)
 
         # Linha amarela
         format.flinha(cor=5)
 
         # Análise dos dados
-        analisarTriang.analise(dados=triangs)
+        # analisarTriang.analise(dados=triangs)
 
 
         # # Resultado
