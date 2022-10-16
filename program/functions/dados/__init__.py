@@ -63,7 +63,6 @@ def escolha():
 
 def dadosTriang(quant_Triang, cor=0):
     triangs = list()
-    temp = list()
     for c in range(quant_Triang):
         print()
         title(f'{c + 1}º triângulo', cor=cor, tam=26)
@@ -72,12 +71,10 @@ def dadosTriang(quant_Triang, cor=0):
         print(f'\nDigite as informações:')
         sleep(1)
 
-        temp.append(leiaFloat('Lado A: '))
-        temp.append(leiaFloat('Lado B: '))
-        temp.append(leiaFloat('Lado C: '))
-
-        triangs.append(temp[:])
-        temp.clear()
+        temp = (leiaFloat('Lado A: '), leiaFloat('Lado B: '), leiaFloat('Lado C: '))
+        triangs.append(temp)
 
         sleep(1.5)
     return triangs
+
+
