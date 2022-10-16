@@ -1,5 +1,3 @@
-# from math import sqrt, degrees
-# from numpy import arccos
 from PIL import Image
 from time import sleep
 from functions import format, dados, analisarTriang
@@ -41,13 +39,12 @@ while True:
 
         # Inserir os dados do(s) triângulo(s)
         triangs = dados.dadosTriang(quantTriang)
-        print(triangs)
-
-        # Linha amarela
-        format.flinha(cor=5)
 
         # Análise dos dados
-        format.title('Análise dos dados', 6)
+        print()
+        format.title('Calculando...', cor=5)
+        sleep(2)
+        print()
         analisarTriang.analise(dados=triangs)
 
         # # Resultado
