@@ -1,9 +1,9 @@
-from time import sleep
 from ..format import *
 
 
 def erro(msg=''):
     print(f'{formatacao[3]}ERRO! {msg}{formatacao[0]}')
+    sleep(1)
 
 
 def userInterrupt():
@@ -16,7 +16,6 @@ def leiaInt(msg=''):
             num = int(input(msg).strip())
         except (ValueError, TypeError):
             erro('Digite um valor válido.')
-            sleep(0.5)
         else:
             return num
 
@@ -27,7 +26,6 @@ def leiaFloat(msg=''):
             num = float(input(msg).strip())
         except (ValueError, TypeError):
             erro('Digite um valor válido')
-            sleep(0.5)
         else:
             return num
 
@@ -43,7 +41,6 @@ def quantTriang(msg):
 
     except KeyboardInterrupt:
         userInterrupt()
-        sleep(1)
         return False
 
 
@@ -64,10 +61,10 @@ def escolha():
             erro('Valor inválido.')
 
 
-def dadosTriang(quantTriang, cor=0):
+def dadosTriang(quant_Triang, cor=0):
     triangs = list()
     temp = list()
-    for c in range(quantTriang):
+    for c in range(quant_Triang):
         print()
         title(f'{c + 1}º triângulo', cor=cor, tam=26)
         sleep(1)
