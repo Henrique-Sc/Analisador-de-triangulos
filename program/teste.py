@@ -1,3 +1,3 @@
 from functions import dados
 
-dados.dadosTriang(2, cor=5)
+print(ados.dadosTriang(2, cor=5))
