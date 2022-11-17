@@ -84,3 +84,6 @@ def dadosTriang(quant_triang, cor=0):
         print()
         sleep(1)
 
+    return triangs
+
+
