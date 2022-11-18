@@ -33,8 +33,8 @@ def linha(tmn=30, simb='=', cor=0):
     print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
 
 
-def flinha(tmn=30, simb='=', cor=0):
-    print()
-    sleep(1)
+def flinha(tmn=30, simb='=', cor=0, time=1, quebra=True):
+    if quebra: print()
+    sleep(time)
     linha(tmn=tmn, simb=simb, cor=cor)
-    sleep(1)
+    sleep(time)
