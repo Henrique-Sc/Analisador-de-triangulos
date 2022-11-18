@@ -63,11 +63,23 @@ def analise(dados_Triangs):
             alts = altura(a, b, c, area_t)  # alturas
 
             # saída
-            print(f'Área: {area_t:.2f}'), sleep(1)
+            if a == b == c:
+                print('Tipo: Equilátero')
+            elif a == b or b == c or a == c:
+                print('Tipo: Isósceles')
+            else:
+                print('Tipo: Escaleno')
+            # Área e perímetro
+
+            print(f'\nÁrea: {area_t:.2f}'), sleep(1)
             print(f'Perímetro: {p:.2f}'), sleep(1)
-            print(f'\nângulo AB: {angs[0]:.2f}°'), sleep(1)
+
+            # Ângulos
+            print(f'\nÂngulo AB: {angs[0]:.2f}°'), sleep(1)
             print(f'Ângulo BC: {angs[1]:.2f}°'), sleep(1)
             print(f'Ângulo AC: {angs[1]:.2f}°'), sleep(1)
+
+            # Alturas
             print(f'\nAltura A: {alts[0]:.2f}'), sleep(1)
             print(f'Altura B: {alts[0]:.2f}'), sleep(1)
             print(f'Altura C: {alts[0]:.2f}')
