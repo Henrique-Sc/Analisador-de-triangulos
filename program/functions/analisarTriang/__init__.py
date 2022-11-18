@@ -78,3 +78,5 @@ def analise(dados_Triangs):
         linha(simb='-', cor=5, tmn=29)  # Linha amarela
         print()
         sleep(1.5)
+
+    linha(cor=3)
