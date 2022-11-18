@@ -52,7 +52,7 @@ def escolha():
             if esc not in 'SN':
                 erro('Valor inválido.')
             else:
-                print(f'{formatacao[2]}Valor recebido: {formatacao[1]}\"N\"{formatacao[0]}')
+                print(f'{formatacao[2]}Valor recebido: {formatacao[1]}\"{esc}\"{formatacao[0]}')
                 if esc == 'S':
                     return True
                 else:
