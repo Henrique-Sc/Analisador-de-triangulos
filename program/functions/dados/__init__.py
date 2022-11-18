@@ -52,6 +52,7 @@ def escolha():
             if esc not in 'SN':
                 erro('Valor inválido.')
             else:
+                print(f'{formatacao[2]}Valor recebido: {formatacao[1]}\"N\"{formatacao[0]}')
                 if esc == 'S':
                     return True
                 else:
@@ -67,7 +68,7 @@ def dadosTriang(quant_Triangs):
         # Título - saber qual é o triângulo
         print()
         title(f'{c + 1}º triângulo', cor=3)
-        sleep(1)
+        sleep(1.5)
 
         print(f'\nDigite as informações:')
         sleep(1)
@@ -75,7 +76,7 @@ def dadosTriang(quant_Triangs):
         # Digitar as informações (medidas) do triângulo:
         temp = (leiaFloat('Lado A: '), leiaFloat('Lado B: '), leiaFloat('Lado C: '))
         dados_Triangs.append(temp[:])
-        del temp  #  apagar a variável temp após salvar os dados_Triangs na lista dados_Triangs
+        del temp  #  apagar a variável temp após salvar os dados na lista dados_Triangs
 
         sleep(1.5)
 
