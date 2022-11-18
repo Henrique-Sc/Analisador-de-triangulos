@@ -13,7 +13,7 @@ formatacao = [
 ]
 
 
-def title(txt, cor=0, tam=35):
+def title(txt, cor=0, tam=30):
 
     if tam == 0:
         tam = len(txt) + 4
@@ -29,11 +29,11 @@ def subtile(txt, cor=0):
     print(f'{formatacao[cor]}-={formatacao[0]}' * 4, txt, f'{formatacao[cor]}=-{formatacao[0]}' * 4)
 
 
-def linha(tmn=35, simb='=', cor=0):
+def linha(tmn=30, simb='=', cor=0):
     print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
 
 
-def flinha(tmn=35, simb='=', cor=0):
+def flinha(tmn=30, simb='=', cor=0):
     print()
     sleep(1)
     linha(tmn=tmn, simb=simb, cor=cor)
