@@ -1,5 +1,8 @@
-from functions import format, dados
+# from functions import format, dados
+from functions.analisarTriang import *
 
-# analise([(1, 1, 1), (10, 12, 50)])
+# analise([(10, 10, 10), (10, 12, 50)])
+print(altura(10, 10, 10, area(10, 10, 10)))
 
-format.subtile('Análise dos dados', cor=3)
+# format.subtile('Análise dos dados', cor=3)
+
