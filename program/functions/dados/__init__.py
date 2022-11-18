@@ -33,11 +33,11 @@ def leiaFloat(msg=''):
 def quantTriang(msg):
     try:
         while True:
-            quantTriang = leiaInt(msg)
-            if quantTriang <= 0:
+            quant_Triang = leiaInt(msg)
+            if quant_Triang <= 0:
                 erro('Digite um valor maior ou igual a 1.')
             else:
-                return quantTriang
+                return quant_Triang
 
     except KeyboardInterrupt:
         userInterrupt()
@@ -62,8 +62,9 @@ def escolha():
 
 
 def dadosTriang(quant_Triang):
-    triangs = list()
+    dados_Triangs = list()
     for c in range(quant_Triang):
+        # Título - saber qual é o triângulo
         print()
         title(f'{c + 1}º triângulo', cor=3)
         sleep(1)
@@ -71,10 +72,12 @@ def dadosTriang(quant_Triang):
         print(f'\nDigite as informações:')
         sleep(1)
 
+        # Digitar as informações (medidas) do triângulo:
         temp = (leiaFloat('Lado A: '), leiaFloat('Lado B: '), leiaFloat('Lado C: '))
-        triangs.append(temp)
+        dados_Triangs.append(temp[:])
+        del temp  #  apagar a variável temp após salvar os dados na lista dados_Triangs
 
         sleep(1.5)
-    return triangs
 
-
+    # Retornar uma lista, onde cada indice vai conter uma tupla com as medidas do triângulo
+    return dados_Triangs
