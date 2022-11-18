@@ -70,6 +70,7 @@ def analise(dados_Triangs):
                 print('Isósceles')
             else:
                 print('Escaleno')
+            sleep(1)
             # Área e perímetro
 
             print(f'\n{formatacao[1]}Área:{formatacao[0]} {area_t:.2f}'), sleep(1)
