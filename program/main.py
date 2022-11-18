@@ -32,7 +32,10 @@ while True:
         print(f'Deseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
         sleep(1.5)
         if dados.escolha():
-            Image.open('images/triangle.png').show()
+            try:
+                Image.open('images/triangle.png').show()
+            except FileNotFoundError:
+                print(dados.erro('Imagem não localizada'))
 
         # Linha amarela
         format.flinha(cor=5, simb='-', time=1.5, quebra=False)
