@@ -19,8 +19,8 @@ while True:
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
         while True:
-            quantTriang = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
-            if quantTriang <= 0:
+            quant_Triang = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
+            if quant_Triang <= 0:
                 dados.erro('Digite um valor maior ou igual a 1.')
             else:
                 break
@@ -38,7 +38,7 @@ while True:
         format.flinha(cor=5)
 
         # Inserir os dados do(s) triângulo(s)
-        triangs = dados.dadosTriang(quantTriang)
+        triangs = dados.dadosTriang(quant_Triang)
 
         # Análise dos dados
         print()
