@@ -23,7 +23,6 @@ def angulos(a, b, c):
 
 
 def altura(a, b, c, area):
-
     altA = (2 * area) / a  # Altura A
     altB = (2 * area) / b  # Altura B
     altC = (2 * area) / c  # Altura C
@@ -34,33 +33,48 @@ def altura(a, b, c, area):
 def analise(dados_Triangs):
     for i, triang in enumerate(dados_Triangs):
         title(f'{i + 1}º triângulo', cor=3)
-        sleep(1)
+        print()
+        sleep(1.5)
 
         # Criando as variáveis a, b e c para ficar de fácil acesso
         a = triang[0]
         b = triang[1]
         c = triang[2]
 
-        print()
-        linha(simb='-', cor=5)  # Linha amarela
-        print(f'Medidas: \n\ta = {a} \n\tb = {b} \n\tc = {c}')
-        linha(simb='-', cor=5)  # Linha amarela
+        print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  # ---------- Medidas ----------
         sleep(1)
 
-        linha(simb='-', cor=5)  # Linha amarela
-        if a + b > c and a + c > b and b + c > a:
+        print(f'a = {a}'), sleep(1)
+        print(f'b = {b}'), sleep(1)
+        print(f'c = {c}'), sleep(1)
+
+        linha(simb='-', cor=5, tmn=29)  # Linha amarela
+
+        print()  # Quebra de linha
+        sleep(1)
+        print(f'{formatacao[5]}-{formatacao[0]}' * 9, f'Resultado', f'{formatacao[5]}-{formatacao[0]}' * 9)  # --------- Resultado ---------
+        sleep(1)
+        # Verificar se com os dados é possível formar um triângulo
+        if a + b > c and a + c > b and b + c > a:  # É possível?
             # calculos
-            area_t = area(a, b, c)  # area
+            area_t = area(a, b, c)  # área
             p = peri(a, b, c)  # perímetro
-            angs = angulos(a, b, c)  # angulos
+            angs = angulos(a, b, c)  # ângulos
             alts = altura(a, b, c, area_t)  # alturas
 
             # saída
-            print(f'Área: {area_t:.2f} | Perímetro: {p:.2f}')
-            print(f'ângulo AB: {angs[0]:.2f}° | ângulo BC: {angs[1]:.2f}° | ângulo AC: {angs[2]:.2f}°')
-            print(f'Altura A: {alts[0]:.2f} | Altura B: {alts[0]:.2f} | Altura C: {alts[0]:.2f}')
+            print(f'Área: {area_t:.2f}'), sleep(1)
+            print(f'Perímetro: {p:.2f}'), sleep(1)
+            print(f'\nângulo AB: {angs[0]:.2f}°'), sleep(1)
+            print(f'Ângulo BC: {angs[1]:.2f}°'), sleep(1)
+            print(f'Ângulo AC: {angs[1]:.2f}°'), sleep(1)
+            print(f'\nAltura A: {alts[0]:.2f}'), sleep(1)
+            print(f'Altura B: {alts[0]:.2f}'), sleep(1)
+            print(f'Altura C: {alts[0]:.2f}')
 
-        else:
-            print('Com esses dados, não é possível formar um triângulo!')
-        linha(simb='-', cor=5)  # Linha amarela
+        else:  # Não é possível...
+            print('Com esses dados, não é \npossível formar um triângulo!')
+        sleep(1)
+        linha(simb='-', cor=5, tmn=29)  # Linha amarela
+        print()
         sleep(1.5)
