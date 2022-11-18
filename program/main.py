@@ -6,7 +6,7 @@ while True:
     try:
         # Resumo sobre o programa
         format.title('Analizador de triângulos', cor=3)
-        sleep(1)
+        sleep(1.5)
 
         print(f'''
 {format.formatacao[2]}Com base no comprimento dos triângulos informados, retorna dados, como: 
@@ -15,7 +15,7 @@ while True:
     > perímetro
     > ângulos
     > Equivalência entre os triângulos informados.{format.formatacao[0]}''')
-        sleep(1)
+        sleep(1.5)
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
         while True:
@@ -26,16 +26,16 @@ while True:
                 break
 
         # Linha amarela
-        format.flinha(cor=5)
+        format.flinha(cor=5, simb='-', time=1.5)
 
         # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
-        print(f'\nDeseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
-        sleep(3)
+        print(f'Deseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
+        sleep(1.5)
         if dados.escolha():
             Image.open('images/triangle.png').show()
 
         # Linha amarela
-        format.flinha(cor=5)
+        format.flinha(cor=5, simb='-', time=1.5, quebra=False)
 
         # Inserir os ddos do(s) triângulo(s)
         dados_Triangs = dados.dadosTriang(quant_Triangs)
