@@ -88,7 +88,7 @@ while True:
         #         print(f'Altura A: {altA:.2f} | Altura B: {altB:.2f} | Altura C: {altC:.2f}')
         #
         #     else:
-        #         print('Com esses dados_Triangs, não é possível fazer um triângulo!')
+        #         print('Com esses dados, não é possível fazer um triângulo!')
         #     print()
         #     print('=' * 37)
         #     print()
