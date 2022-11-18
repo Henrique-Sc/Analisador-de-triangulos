@@ -1,9 +1,9 @@
-from time import sleep
 from ..format import *
 
 
 def erro(msg=''):
     print(f'{formatacao[3]}ERRO! {msg}{formatacao[0]}')
+    sleep(1)
 
 
 def userInterrupt():
@@ -16,7 +16,6 @@ def leiaInt(msg=''):
             num = int(input(msg).strip())
         except (ValueError, TypeError):
             erro('Digite um valor válido.')
-            sleep(0.5)
         else:
             return num
 
@@ -27,7 +26,6 @@ def leiaFloat(msg=''):
             num = float(input(msg).strip())
         except (ValueError, TypeError):
             erro('Digite um valor válido')
-            sleep(0.5)
         else:
             return num
 
@@ -35,16 +33,15 @@ def leiaFloat(msg=''):
 def quantTriang(msg):
     try:
         while True:
-            quantTriang = leiaInt(msg)
-            if quantTriang <= 0:
+            quant_Triang = leiaInt(msg)
+            if quant_Triang <= 0:
                 erro('Digite um valor maior ou igual a 1.')
             else:
-                return quantTriang
+                return quant_Triang
 
     except KeyboardInterrupt:
         userInterrupt()
-        quantTriang = 0
-        return quantTriang
+        return False
 
 
 def escolha():
@@ -55,6 +52,7 @@ def escolha():
             if esc not in 'SN':
                 erro('Valor inválido.')
             else:
+                print(f'{formatacao[2]}Valor recebido: {formatacao[1]}\"{esc}\"{formatacao[0]}')
                 if esc == 'S':
                     return True
                 else:
@@ -64,26 +62,23 @@ def escolha():
             erro('Valor inválido.')
 
 
-def dadosTriang(quant_triang, cor=0):
-    triangs = list()
-    temp = list()
-    for c in range(quant_triang):
-        title(f'{c + 1}º triângulo', cor=cor, tam=26)
-        sleep(1)
+def dadosTriang(quant_Triangs):
+    dados_Triangs = list()
+    for c in range(quant_Triangs):
+        # Título - saber qual é o triângulo
+        print()
+        title(f'{c + 1}º triângulo', cor=3)
+        sleep(1.5)
 
         print(f'\nDigite as informações:')
         sleep(1)
 
-        temp.append(leiaFloat('Lado A: '))
-        temp.append(leiaFloat('Lado B: '))
-        temp.append(leiaFloat('Lado C: '))
+        # Digitar as informações (medidas) do triângulo:
+        temp = (leiaFloat('Lado A: '), leiaFloat('Lado B: '), leiaFloat('Lado C: '))
+        dados_Triangs.append(temp[:])
+        del temp  #  apagar a variável temp após salvar os dados na lista dados_Triangs
 
-        triangs.append(temp[:])
-        temp.clear()
+        sleep(1.5)
 
-        print()
-        sleep(1)
-
-    return triangs
-
-
+    # Retornar uma lista, onde cada indice vai conter uma tupla com as medidas do triângulo
+    return dados_Triangs

@@ -1,3 +1,5 @@
+from time import sleep
+
 formatacao = [
     '\033[m',         # 0 - Reset
     '\033[1m',        # 1 - Negrito
@@ -11,8 +13,7 @@ formatacao = [
 ]
 
 
-def title(txt, cor=0, tam=0):
-    txt = txt.strip()
+def title(txt, cor=0, tam=30):
 
     if tam == 0:
         tam = len(txt) + 4
@@ -24,5 +25,16 @@ def title(txt, cor=0, tam=0):
     print(formatacao[0])
 
 
-def linha(tmn=35, simb='=', cor=0):
+def subtile(txt, cor=0):
+    print(f'{formatacao[cor]}-={formatacao[0]}' * 4, txt, f'{formatacao[cor]}=-{formatacao[0]}' * 4)
+
+
+def linha(tmn=30, simb='=', cor=0):
     print(f'{formatacao[cor]}{simb}{formatacao[0]}' * tmn)
+
+
+def flinha(tmn=30, simb='=', cor=0, time=1, quebra=True):
+    if quebra: print()
+    sleep(time)
+    linha(tmn=tmn, simb=simb, cor=cor)
+    sleep(time)

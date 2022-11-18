@@ -1,3 +1,7 @@
-from functions import dados
+# from functions import format, dados
+from functions.analisarTriang import *
 
-print(ados.dadosTriang(2, cor=5))
+analise([(10, 10, 10)])
+
+# format.subtile('Análise dos dados', cor=3)
+

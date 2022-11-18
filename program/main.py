@@ -1,14 +1,12 @@
-from math import sqrt, degrees
-from numpy import arccos
 from PIL import Image
 from time import sleep
-from functions import format, dados
+from functions import format, dados, analisarTriang
 
 while True:
     try:
         # Resumo sobre o programa
         format.title('Analizador de triângulos', cor=3)
-        sleep(1)
+        sleep(1.5)
 
         print(f'''
 {format.formatacao[2]}Com base no comprimento dos triângulos informados, retorna dados, como: 
@@ -17,50 +15,38 @@ while True:
     > perímetro
     > ângulos
     > Equivalência entre os triângulos informados.{format.formatacao[0]}''')
-        sleep(1)
+        sleep(1.5)
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
-        quant_triang = dados.quantTriang(msg='\nQuantos triângulos deseja analizar? ')
-        print()
+        while True:
+            quant_Triangs = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
+            if quant_Triangs <= 0:
+                dados.erro('Digite um valor maior ou igual a 1.')
+            else:
+                break
 
-        sleep(1)
-        format.linha(cor=5)
-        sleep(1)
+        # Linha amarela
+        format.flinha(cor=5, simb='-', time=1.5)
 
         # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
-        print(f'\nDeseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
-        sleep(3)
+        print(f'Deseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
+        sleep(1.5)
         if dados.escolha():
             Image.open('images/triangle.png').show()
 
-        # Inserir os dados do(s) triângulo(s)
-        dados.dadosTriang(quant_triang)
+        # Linha amarela
+        format.flinha(cor=5, simb='-', time=1.5, quebra=False)
 
-        # for c in range(0, quant_triang):
-        #     sleep(0.5)
-        #
-        #     # Título
-        #     print()
-        #     print('=' * 37)
-        #     print(f'\n{f" {c + 1}º Triângulo ":-^37}')
-        #
-        #     # Entrada dos dados
-        #     print('\nDigite as informações: ')
-        #     print()
-        #     temp.append(float(input('Lado A: ').strip()))
-        #     temp.append(float(input('Lado B: ').strip()))
-        #     temp.append(float(input('Lado C: ').strip()))
-        #
-        #     # Inserindo os dados e limpando a lista temp
-        #     triangs.append(temp[:])
-        #     temp.clear()
-        #
-        #     print()
-        #     print('=' * 37)
-        #
-        # sleep(0.5)
-        # print('\n\n=-=-=-=-= Análise dos dados =-=-=-=-=\n')
-        #
+        # Inserir os ddos do(s) triângulo(s)
+        dados_Triangs = dados.dadosTriang(quant_Triangs)
+
+        # Análise dos dados
+        print()
+        format.title('Calculando...', cor=5)
+        sleep(2)
+        print()
+        analisarTriang.analise(dados_Triangs=dados_Triangs)
+
         # # Resultado
         # for i, triang in enumerate(triangs):
         #     sleep(1.5)
@@ -74,7 +60,7 @@ while True:
         #     b = triang[1]
         #     c = triang[2]
         #
-        #     # Se com os dados não for possível fazer um triângulo, não realizará os cálculos
+        #     # Se com os dados_Triangs não for possível fazer um triângulo, não realizará os cálculos
         #     if a + b > c and a + c > b and b + c > a:
         #         # Cálculos
         #         s = (a + b + c) / 2  # S - Para realizar a equação de Heron
@@ -115,9 +101,8 @@ while True:
     except KeyboardInterrupt:
         print('')
         dados.userInterrupt()
-        sleep(2)
+        sleep(1)
         print('')
         format.title('O programa será reiniciado...', 5)
-        sleep(3)
+        sleep(2)
         print('')
-
