@@ -44,9 +44,9 @@ def analise(dados_Triangs):
         print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  # ---------- Medidas ----------
         sleep(1)
 
-        print(f'a = {a}'), sleep(1)
-        print(f'b = {b}'), sleep(1)
-        print(f'c = {c}'), sleep(1)
+        print(f'{formatacao[1]}a:{formatacao[0]} {a}'), sleep(1)
+        print(f'{formatacao[1]}b:{formatacao[0]} {b}'), sleep(1)
+        print(f'{formatacao[1]}c:{formatacao[0]} {c}'), sleep(1)
 
         linha(simb='-', cor=5, tmn=29)  # Linha amarela
 
