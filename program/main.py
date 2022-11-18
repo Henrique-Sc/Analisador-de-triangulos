@@ -19,8 +19,8 @@ while True:
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
         while True:
-            quant_Triang = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
-            if quant_Triang <= 0:
+            quant_Triangs = dados.leiaInt('\nQuantos triângulos deseja analizar? ')
+            if quant_Triangs <= 0:
                 dados.erro('Digite um valor maior ou igual a 1.')
             else:
                 break
@@ -37,15 +37,15 @@ while True:
         # Linha amarela
         format.flinha(cor=5)
 
-        # Inserir os dados do(s) triângulo(s)
-        triangs = dados.dadosTriang(quant_Triang)
+        # Inserir os ddos do(s) triângulo(s)
+        dados_Triangs = dados.dadosTriang(quant_Triangs)
 
         # Análise dos dados
         print()
         format.title('Calculando...', cor=5)
         sleep(2)
         print()
-        analisarTriang.analise(dados=triangs)
+        analisarTriang.analise(dados_Triangs=dados_Triangs)
 
         # # Resultado
         # for i, triang in enumerate(triangs):
@@ -60,7 +60,7 @@ while True:
         #     b = triang[1]
         #     c = triang[2]
         #
-        #     # Se com os dados não for possível fazer um triângulo, não realizará os cálculos
+        #     # Se com os dados_Triangs não for possível fazer um triângulo, não realizará os cálculos
         #     if a + b > c and a + c > b and b + c > a:
         #         # Cálculos
         #         s = (a + b + c) / 2  # S - Para realizar a equação de Heron
@@ -88,7 +88,7 @@ while True:
         #         print(f'Altura A: {altA:.2f} | Altura B: {altB:.2f} | Altura C: {altC:.2f}')
         #
         #     else:
-        #         print('Com esses dados, não é possível fazer um triângulo!')
+        #         print('Com esses dados_Triangs, não é possível fazer um triângulo!')
         #     print()
         #     print('=' * 37)
         #     print()
