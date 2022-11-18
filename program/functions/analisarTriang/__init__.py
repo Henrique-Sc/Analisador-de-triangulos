@@ -63,26 +63,27 @@ def analise(dados_Triangs):
             alts = altura(a, b, c, area_t)  # alturas
 
             # saída
+            print(f'{formatacao[1]}Tipo:{formatacao[0]} {formatacao[0]}', end='')
             if a == b == c:
-                print('Tipo: Equilátero')
+                print('Equilátero')
             elif a == b or b == c or a == c:
-                print('Tipo: Isósceles')
+                print('Isósceles')
             else:
-                print('Tipo: Escaleno')
+                print('Escaleno')
             # Área e perímetro
 
-            print(f'\nÁrea: {area_t:.2f}'), sleep(1)
-            print(f'Perímetro: {p:.2f}'), sleep(1)
+            print(f'\n{formatacao[1]}Área:{formatacao[0]} {area_t:.2f}'), sleep(1)
+            print(f'{formatacao[1]}Perímetro:{formatacao[0]} {p:.2f}'), sleep(1)
 
             # Ângulos
-            print(f'\nÂngulo AB: {angs[0]:.2f}°'), sleep(1)
-            print(f'Ângulo BC: {angs[1]:.2f}°'), sleep(1)
-            print(f'Ângulo AC: {angs[1]:.2f}°'), sleep(1)
+            print(f'\n{formatacao[1]}Ângulo AB:{formatacao[0]} {angs[0]:.2f}°'), sleep(1)
+            print(f'{formatacao[1]}Ângulo BC:{formatacao[0]} {angs[1]:.2f}°'), sleep(1)
+            print(f'{formatacao[1]}Ângulo AC:{formatacao[0]} {angs[1]:.2f}°'), sleep(1)
 
             # Alturas
-            print(f'\nAltura A: {alts[0]:.2f}'), sleep(1)
-            print(f'Altura B: {alts[0]:.2f}'), sleep(1)
-            print(f'Altura C: {alts[0]:.2f}')
+            print(f'\n{formatacao[1]}Altura A:{formatacao[0]} {alts[0]:.2f}'), sleep(1)
+            print(f'{formatacao[1]}Altura B:{formatacao[0]} {alts[0]:.2f}'), sleep(1)
+            print(f'{formatacao[1]}Altura C:{formatacao[0]} {alts[0]:.2f}')
 
         else:  # Não é possível...
             print('Com esses dados, não é \npossível formar um triângulo!')
