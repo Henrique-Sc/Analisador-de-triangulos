@@ -9,9 +9,9 @@ def area(a, b, c):
     return area
 
 
-def p(a, b, c):
-    peri = a + b + c
-    return peri
+def peri(a, b, c):
+    p = a + b + c
+    return p
 
 
 def angulos(a, b, c):
@@ -41,15 +41,26 @@ def analise(dados_Triangs):
         b = triang[1]
         c = triang[2]
 
-        for cont in f'\nMedidas: \n\ta = {a} \n\tb = {b} \n\tc = {c}\n':
-            print(cont, end="")
-            sleep(0.25)
-
+        print()
+        linha(simb='-', cor=5)  # Linha amarela
+        print(f'Medidas: \n\ta = {a} \n\tb = {b} \n\tc = {c}')
+        linha(simb='-', cor=5)  # Linha amarela
         sleep(1)
 
+        linha(simb='-', cor=5)  # Linha amarela
         if a + b > c and a + c > b and b + c > a:
-            area(a, b, c)
-            p(a, b, c)
+            # calculos
+            area_t = area(a, b, c)  # area
+            p = peri(a, b, c)  # perímetro
+            angs = angulos(a, b, c)  # angulos
+            alts = altura(a, b, c, area_t)  # alturas
+
+            # saída
+            print(f'Área: {area_t:.2f} | Perímetro: {p:.2f}')
+            print(f'ângulo AB: {angs[0]:.2f}° | ângulo BC: {angs[1]:.2f}° | ângulo AC: {angs[2]:.2f}°')
+            print(f'Altura A: {alts[0]:.2f} | Altura B: {alts[0]:.2f} | Altura C: {alts[0]:.2f}')
+
         else:
             print('Com esses dados, não é possível formar um triângulo!')
+        linha(simb='-', cor=5)  # Linha amarela
         sleep(1.5)
