@@ -9,12 +9,12 @@ while True:
         sleep(1.5)
 
         print(f'''
-{format.formatacao[2]}Com base no comprimento dos triângulos informados, retorna dados, como: 
-    > tipo de triângulo
-    > área
-    > perímetro
-    > ângulos
-    > Equivalência entre os triângulos informados.{format.formatacao[0]}''')
+{format.formatacao[2]}Com base nas medidas dos lados do triângulo, retorna dados como: 
+    > Tipo de triângulo;
+    > Área;
+    > Perímetro;
+    > Ângulos;
+    > Altura.{format.formatacao[0]}''')
         sleep(1.5)
 
         # Perguntar ao usuário quantos triângulos ele quer analizar
@@ -38,7 +38,7 @@ while True:
                 print(dados.erro('Imagem não localizada'))
 
         # Linha amarela
-        format.flinha(cor=5, simb='-', time=1.5, quebra=False)
+        format.flinha(cor=5, simb='-', time=0, quebra=False)
 
         # Inserir os ddos do(s) triângulo(s)
         dados_Triangs = dados.dadosTriang(quant_Triangs)
