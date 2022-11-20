@@ -74,7 +74,7 @@ def dadosTriang(quant_Triangs):
         sleep(1)
 
         # Digitar as informações (medidas) do triângulo:
-        temp = (leiaFloat('Lado A: '), leiaFloat('Lado B: '), leiaFloat('Lado C: '))
+        temp = (leiaFloat('Lado AC: '), leiaFloat('Lado BC: '), leiaFloat('Lado AB: '))
         dados_Triangs.append(temp[:])
         del temp  #  apagar a variável temp após salvar os dados na lista dados_Triangs
 
