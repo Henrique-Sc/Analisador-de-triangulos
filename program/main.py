@@ -33,7 +33,7 @@ while True:
         sleep(1.5)
         if dados.escolha():
             try:
-                Image.open('images/triangle.png').show()
+                Image.open('images/triangulo.png').show()
             except FileNotFoundError:
                 print(dados.erro('Imagem não localizada'))
 
