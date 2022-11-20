@@ -48,7 +48,7 @@ while True:
         format.title('Calculando...', cor=5)
         sleep(2)
         print()
-        analisarTriang.analise(dados_Triangs=dados_Triangs)
+        analisarTriang.analise(dados_triangs=dados_Triangs)
 
         sleep(1.5)
 
