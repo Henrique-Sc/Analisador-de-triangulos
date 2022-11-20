@@ -5,8 +5,8 @@ from numpy import arccos
 
 def area(a, b, c):
     s = (a + b + c) / 2  # S - Para realizar a equação de Heron
-    area = sqrt(s * (s - a) * (s - b) * (s - c))  # Área
-    return area
+    area_t = sqrt(s * (s - a) * (s - b) * (s - c))  # Área
+    return area_t
 
 
 def peri(a, b, c):
@@ -15,23 +15,23 @@ def peri(a, b, c):
 
 
 def angulos(a, b, c):
-    angA = degrees(arccos((a ** 2 + c ** 2 - b ** 2) / (2 * a * c)))  # Ângulo A
-    angB = degrees(arccos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c)))  # Ângulo B
-    angC= degrees(arccos((a ** 2 + b ** 2 - c ** 2) / (2 * b * a)))  # Ângulo C
+    ang_a = degrees(arccos((a ** 2 + c ** 2 - b ** 2) / (2 * a * c)))  # Ângulo A
+    ang_b = degrees(arccos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c)))  # Ângulo B
+    ang_c = degrees(arccos((a ** 2 + b ** 2 - c ** 2) / (2 * b * a)))  # Ângulo C
 
-    return angA, angB, angC
-
-
-def altura(ac, bc, ab, area):
-    altA = (2 * area) / bc  # Altura A
-    altB = (2 * area) / ac  # Altura B
-    altC = (2 * area) / ab  # Altura C
-
-    return altA, altB, altC
+    return ang_a, ang_b, ang_c
 
 
-def analise(dados_Triangs):
-    for i, triang in enumerate(dados_Triangs):
+def altura(ac, bc, ab, area_t):
+    alt_a = (2 * area_t) / bc  # Altura A
+    alt_b = (2 * area_t) / ac  # Altura B
+    alt_c = (2 * area_t) / ab  # Altura C
+
+    return alt_a, alt_b, alt_c
+
+
+def analise(dados_triangs):
+    for i, triang in enumerate(dados_triangs):
         title(f'{i + 1}º triângulo', cor=3)
         print()
         sleep(1.5)
@@ -41,7 +41,8 @@ def analise(dados_Triangs):
         bc = triang[1]
         ab = triang[2]
 
-        print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  # ---------- Medidas ----------
+        # ---------- Medidas ----------
+        print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  #
         sleep(1)
 
         print(f'{formatacao[1]}AC:{formatacao[0]} {ac}'), sleep(1)
@@ -66,6 +67,7 @@ def analise(dados_Triangs):
             alts = altura(ac, bc, ab, area_t)  # alturas
 
             # saída
+            # Tipo
             print(f'{formatacao[1]}Tipo:{formatacao[0]} {formatacao[0]}', end='')
             if ac == bc == ab:
                 print('Equilátero', end='')
