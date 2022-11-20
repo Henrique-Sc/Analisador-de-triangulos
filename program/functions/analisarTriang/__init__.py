@@ -37,16 +37,16 @@ def analise(dados_Triangs):
         sleep(1.5)
 
         # Criando as variáveis a, b e c para ficar de fácil acesso
-        a = triang[0]
-        b = triang[1]
-        c = triang[2]
+        ac = triang[0]
+        bc = triang[1]
+        ab = triang[2]
 
         print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  # ---------- Medidas ----------
         sleep(1)
 
-        print(f'{formatacao[1]}a:{formatacao[0]} {a}'), sleep(1)
-        print(f'{formatacao[1]}b:{formatacao[0]} {b}'), sleep(1)
-        print(f'{formatacao[1]}c:{formatacao[0]} {c}'), sleep(1)
+        print(f'{formatacao[1]}AC:{formatacao[0]} {a}'), sleep(1)
+        print(f'{formatacao[1]}BC:{formatacao[0]} {b}'), sleep(1)
+        print(f'{formatacao[1]}AB:{formatacao[0]} {c}'), sleep(1)
 
         linha(simb='-', cor=5, tmn=29)  # Linha amarela
 
