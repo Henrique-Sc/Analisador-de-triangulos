@@ -15,17 +15,17 @@ def peri(a, b, c):
 
 
 def angulos(a, b, c):
-    angAB = degrees(arccos((a ** 2 + b ** 2 - c ** 2) / (2 * b * a)))  # Ângulo AB
-    angBC = degrees(arccos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c)))  # Ângulo BC
-    angAC = degrees(arccos((a ** 2 + c ** 2 - b ** 2) / (2 * a * c)))  # Ângulo AC
+    angA = degrees(arccos((a ** 2 + c ** 2 - b ** 2) / (2 * a * c)))  # Ângulo A
+    angB = degrees(arccos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c)))  # Ângulo B
+    angC= degrees(arccos((a ** 2 + b ** 2 - c ** 2) / (2 * b * a)))  # Ângulo C
 
-    return angAB, angBC, angAC
+    return angA, angB, angC
 
 
-def altura(a, b, c, area):
-    altA = (2 * area) / a  # Altura A
-    altB = (2 * area) / b  # Altura B
-    altC = (2 * area) / c  # Altura C
+def altura(ac, bc, ab, area):
+    altA = (2 * area) / bc  # Altura A
+    altB = (2 * area) / ac  # Altura B
+    altC = (2 * area) / ab  # Altura C
 
     return altA, altB, altC
 
@@ -44,47 +44,53 @@ def analise(dados_Triangs):
         print(f'{formatacao[5]}-{formatacao[0]}' * 10, f'Medidas', f'{formatacao[5]}-{formatacao[0]}' * 10)  # ---------- Medidas ----------
         sleep(1)
 
-        print(f'{formatacao[1]}AC:{formatacao[0]} {a}'), sleep(1)
-        print(f'{formatacao[1]}BC:{formatacao[0]} {b}'), sleep(1)
-        print(f'{formatacao[1]}AB:{formatacao[0]} {c}'), sleep(1)
+        print(f'{formatacao[1]}AC:{formatacao[0]} {ac}'), sleep(1)
+        print(f'{formatacao[1]}BC:{formatacao[0]} {bc}'), sleep(1)
+        print(f'{formatacao[1]}AB:{formatacao[0]} {ab}'), sleep(1)
 
         linha(simb='-', cor=5, tmn=29)  # Linha amarela
 
         print()  # Quebra de linha
         sleep(1)
-        print(f'{formatacao[5]}-{formatacao[0]}' * 9, f'Resultado', f'{formatacao[5]}-{formatacao[0]}' * 9)  # --------- Resultado ---------
+
+        # --------- Resultado ---------
+        print(f'{formatacao[5]}-{formatacao[0]}' * 9, f'Resultado', f'{formatacao[5]}-{formatacao[0]}' * 9)
         sleep(1)
+
         # Verificar se com os dados é possível formar um triângulo
-        if a + b > c and a + c > b and b + c > a:  # É possível?
+        if ac + bc > ab and ac + ab > bc and bc + ab > ac:  # É possível?
             # calculos
-            area_t = area(a, b, c)  # área
-            p = peri(a, b, c)  # perímetro
-            angs = angulos(a, b, c)  # ângulos
-            alts = altura(a, b, c, area_t)  # alturas
+            area_t = area(ac, bc, ab)  # área
+            p = peri(ac, bc, ab)  # perímetro
+            angs = angulos(ac, bc, ab)  # ângulos
+            alts = altura(ac, bc, ab, area_t)  # alturas
 
             # saída
             print(f'{formatacao[1]}Tipo:{formatacao[0]} {formatacao[0]}', end='')
-            if a == b == c:
-                print('Equilátero')
-            elif a == b or b == c or a == c:
-                print('Isósceles')
+            if ac == bc == ab:
+                print('Equilátero', end='')
+            elif ac == bc or bc == ab or ac == ab:
+                print('Isósceles', end='')
             else:
-                print('Escaleno')
-            sleep(1)
-            # Área e perímetro
+                print('Escaleno', end='')
 
-            print(f'\n{formatacao[1]}Área:{formatacao[0]} {area_t:.2f}'), sleep(1)
+            if 90 in angs:
+                print(' - Triângulo retângulo', end='')
+            sleep(1)
+
+            # Área e perímetro
+            print(f'\n\n{formatacao[1]}Área:{formatacao[0]} {area_t:.2f}'), sleep(1)
             print(f'{formatacao[1]}Perímetro:{formatacao[0]} {p:.2f}'), sleep(1)
 
             # Ângulos
-            print(f'\n{formatacao[1]}Ângulo AB:{formatacao[0]} {angs[0]:.2f}°'), sleep(1)
-            print(f'{formatacao[1]}Ângulo BC:{formatacao[0]} {angs[1]:.2f}°'), sleep(1)
-            print(f'{formatacao[1]}Ângulo AC:{formatacao[0]} {angs[1]:.2f}°'), sleep(1)
+            print(f'\n{formatacao[1]}Ângulo A:{formatacao[0]} {angs[0]:.2f}°'), sleep(1)
+            print(f'{formatacao[1]}Ângulo B:{formatacao[0]} {angs[1]:.2f}°'), sleep(1)
+            print(f'{formatacao[1]}Ângulo C:{formatacao[0]} {angs[2]:.2f}°'), sleep(1)
 
             # Alturas
             print(f'\n{formatacao[1]}Altura A:{formatacao[0]} {alts[0]:.2f}'), sleep(1)
-            print(f'{formatacao[1]}Altura B:{formatacao[0]} {alts[0]:.2f}'), sleep(1)
-            print(f'{formatacao[1]}Altura C:{formatacao[0]} {alts[0]:.2f}')
+            print(f'{formatacao[1]}Altura B:{formatacao[0]} {alts[1]:.2f}'), sleep(1)
+            print(f'{formatacao[1]}Altura C:{formatacao[0]} {alts[2]:.2f}')
 
         else:  # Não é possível...
             print('Com esses dados, não é \npossível formar um triângulo!')
