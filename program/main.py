@@ -29,7 +29,8 @@ while True:
         format.flinha(cor=5, simb='-', time=1.5)
 
         # Fazer uma opção para ver uma imagem de exemplo para visualizar as informações
-        print(f'Deseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]} para facilitar a inserção e leitura dos dados?\n')
+        print(f'Deseja visualizar uma {format.formatacao[6]}imagem de exemplo{format.formatacao[0]}'
+              f' para facilitar a inserção e leitura dos dados?\n')
         sleep(1.5)
         if dados.escolha():
             try:
