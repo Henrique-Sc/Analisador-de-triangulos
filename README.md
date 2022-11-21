@@ -74,3 +74,5 @@ Obs: O arquivo 'main.py' precisa estar com as pastas 'functions' e 'images'
 - Python 3.9 ou superior
 - Numpy 1.23.4 ou superior
 - Pillow 9.3.0 ou superior
+
+Instalar os requisitos: `pip install -r requirements.txt`
