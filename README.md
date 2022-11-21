@@ -20,7 +20,7 @@ Imagem programa
 
 <img width="546" alt="Captura de tela_20221120_204502" src="https://user-images.githubusercontent.com/96785101/202934799-2ee17a32-2f63-4536-bdc8-e2ef51182900.png">
 
-<img width="546" alt="Triângulo.png" src="https://user-images.githubusercontent.com/96785101/202934843-76f03147-fd76-4b65-847e-5412e39d8d75.png">
+<img width="255" alt="Triângulo.png" src="https://user-images.githubusercontent.com/96785101/202934843-76f03147-fd76-4b65-847e-5412e39d8d75.png">
 
 
 3. Após isso, começa a inserção dos dados, onde o usuário digita a medida dos 3 lados do triângulo
