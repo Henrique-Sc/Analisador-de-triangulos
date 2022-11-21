@@ -54,7 +54,7 @@ Imagem programa
 
 ---
 
-Conhecimentos utilizados:
+## Conhecimentos utilizados:
 
 - Tratamento erros e exceções
 - Laços
@@ -64,3 +64,13 @@ Conhecimentos utilizados:
 - Variáveis compostas (Listas, tuplas e dicionários)
 - Módulos
 - Cores no terminal
+
+## Utilização do programa:
+Faça download da pasta 'program' e execute o arquivo 'main.py' pelo intérprete do python.
+
+Obs: O arquivo 'main.py' precisa estar com as pastas 'functions' e 'images'
+
+### Requisitos:
+- Python 3.9 ou superior
+- numpy: 1.23.4 ou superior
+- Pillow: 9.3.0 ou superior
