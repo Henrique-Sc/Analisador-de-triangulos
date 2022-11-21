@@ -44,6 +44,7 @@ Imagem programa
 
 <img width="255" alt="Captura de tela 2022-11-20 205236" src="https://user-images.githubusercontent.com/96785101/202934912-c7cc2abc-5869-4021-8f7e-472d66490cb3.png">
 
+<img width="255" alt="Captura de tela 2022-11-20 205813" src="https://user-images.githubusercontent.com/96785101/202935578-964f38c7-8da6-4bf0-8255-e5028c68640f.png">
 
 
 5. Finalização do programa:
