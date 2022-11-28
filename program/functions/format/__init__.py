@@ -14,7 +14,6 @@ formatacao = [
 
 
 def title(txt, cor=0, tam=30):
-
     if tam == 0:
         tam = len(txt) + 4
 
