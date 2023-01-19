@@ -12,7 +12,7 @@ Com base nas medidas dos lados do triângulo, retorna dados como:
 ## Funcionamento:
 
 1. Realiza uma breve introdução e pergunta ao usuário quantos triângulos ele deseja analisar:
-Imagem programa
+
 <img width="404" alt="Captura de tela_20221120_204258" src="https://user-images.githubusercontent.com/96785101/202934784-801a6cf4-b033-43ab-a3a1-fa665e02b2e7.png">
 
 
